@@ -9,6 +9,9 @@ module.exports = function (app) {
     app.post('/:id/storeImage', home.storeImage);
     //app.post('/:id/upload', upload, function(req,res){});
     app.post('/:id/sendQuestion', home.sendQuestion);
+    app.get('/:id/story', home.getStory);
+    app.post('/storeInfo', home.storeInfo);
+    app.get('/getInfo', home.getInfo);
     /*app.get('/signup', home.signup);
 
     app.get('/', home.loggedIn, home.home);//home

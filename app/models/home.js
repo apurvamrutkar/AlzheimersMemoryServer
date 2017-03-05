@@ -10,7 +10,31 @@ var userSchema = mongoose.Schema({
 	answerPairs:[{
 		key:String,
 		value:String
-	}]
+	}],
+	wife:{
+		name:String,
+		age:Number,
+		images:[{
+			url:String
+		}]
+	},
+	children:[
+		{
+			name:String,
+			age:Number,
+			images:[{
+				url:String
+			}]
+		}
+	],
+	grandchildren:[{
+		name:String,
+		age:Number,
+		images:[{
+			url:String
+		}]
+	}
+	]
 	/*name: String,
 	mail: String,
 	password: String,

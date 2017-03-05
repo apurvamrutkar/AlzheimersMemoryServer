@@ -9,91 +9,184 @@ var cors = require('cors');
 var util = require('util');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
-var knowledgeBaseId = '8412357a-1e63-47d5-8035-30d94d863612';
+var knowledgeBaseId = 'c7c0dc9e-5809-4c4b-822f-a913ed59d946';
 var subsriptionKey = 'a2ea2916d854479dabf9ea302e61a415';
 var httpsRequest = require('request');
 var utf8 = require('utf8');
 
-//create default db entries
-var answerKeyValuePair = {
-	'1': 'Name',
-	'2': 'Age',
-	'3':'Address',
-	'4': 'Hobbies',
-	'5': 'pet\'s type',
-	'6': 'Pet\'s name',
-	'7': 'Favourite sports team(basketball)',
-	'8':'five favourite bands',
-	'9': 'favourite genre',
-	'10': 'Wife\'s name',
-	'11': 'countries visited',
-	'12': 'favourite movies',
-	'13': 'favourite food',
-	'14': 'Company Name',
-	'15': 'Position I handled',
-	'16': 'wife image',
-	'17': 'emergency contact',
-	'18': 'shows'
+var information;
+
+var wife = {
+	name : 'lily',
+	age:60,
+	images:[{
+		url:'https://s3.amazonaws.com/images-hacktech/with+wife.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-hacktech/wedding.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2746082005_9e764550cd_z.jpg'
+	}]
 }
 
-var userKeyValuePair = [{
-	'key':'Name',
-	'value':'James Wilson'
-},
-{
-	'key':'Age',
-	'value':'63'
+var children = [{
+	name:'lucy',
+	age:31,
+	images:[{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2746457240_4a97bbe57b_z.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2746896162_f15ba8c0f5_z.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2747039690_3ebb196bd3_z.jpg'
+	}]
+}]
+
+var grandChildren = [{
+	name:'Katy',
+	age:4,
+	images:[{
+		url:'https://s3.amazonaws.com/images-hacktech/grandkids.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2640075068_415341224d_z.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2746863250_432545a1d5_z.jpg'
+	}
+	]
 },{
-	'key':'Address',
-	'value':'3800 SW 34th Street, Baker Avenue, LA'
-},{
-	'key':'Hobbies',
-	'value':'basketball, football, gardening'
-},{
-	'key':'pet\'s type',
-	'value':'dog'
-},{
-	'key':'Pet\'s name',
-	'value':'Hugo'
-},{
-	'key':'Favourite sports team(basketball)',
-	'value':'Nicks'
-},{
-	'key':'five favorite bands',
-	'value':'U 2, procralimers, creed, def leppard, metallica'
-},{
-	'key':'favourite genre',
-	'value':'electronic'
-},{
-	'key':'Wife\'s name',
-	'value':'lily'
-},{
-	'key':'countries visited',
-	'value':'canada, mexico, united kingdom, india'
-},{
-	'key': 'favourite movies',
-	'value': 'james bond, seven, godfather, shawshank redemption'
-},{
-	'key': 'favourite food',
-	'value':'orange chicken, chicken qusedillas, takoyaki'
-},{
-	'key': 'Company Name',
-	'value':'IBM, Apple, Ford'
-},{
-	'key': 'Position I handled',
-	'value':'Chief Executive Sales at IBM'
-},{
-	'key': 'wife image',
-	'value':'$$pathtoimage'
-},{
-	'key': 'emergency contact',
-	'value':'3528881397',
-},{
-	'@18': 'shows',
-	'value':'cheers, perfect strangers,knight rider, who\'s the boss'
+	name:'Jane',
+	age:5,
+	images:[{
+		url:'https://s3.amazonaws.com/images-hacktech/grandkids.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2640075068_415341224d_z.jpg'
+	},{
+		url:'https://s3.amazonaws.com/images-caltech-hacks/2746863250_432545a1d5_z.jpg'
+	}
+	]
 }]
 
 
+//create default db entries
+var answerKeyValuePair = {
+	'1'	: 'Name',
+	'2'	: 'Age',
+	'3'	: 'Exact location',
+	'4'	: 'hobby',
+	'5'	: 'pet',
+	'6' : 'pet name',
+    '7'	: 'Favorite national sports team',
+	'8'	:'favorite musician/band',
+	'9'	:'favorite music genre',
+	'10':	'Wife/spouse name',
+	'11':	'a country/city you have travelled to',
+	'12':'a list of films you love',
+	'13':	'favorite food/dish',
+	'14': 'Company/business you worked for previously',
+	'15': 'Your title at your previous job',
+	'16':	'<<wife>> Loading an image of your spouse',
+	'17':  '<<DaughterContact>>',	
+	'18':	'A tv show that they like',
+	'27':'<<makes phone call to emergency contact>>',
+	'30': 'Child name',
+	'31':'Aniversary date',
+	'32':'number of children',
+	'33':'Daughter home city',
+	'34':'Daughter age',
+	'35':'<<daughter>>',
+	'36':'<<family>>',
+	'37':'<<grandChildren>>'
+}
+
+var userKeyValuePair = [{
+	key:'Name',
+	value:'James Wilson'
+},
+{
+	key:'Age',
+	value:'63'
+},{
+	key:'Exact location',
+	value:'3800 SW 34th Street, Baker Avenue'
+},{
+	key:'hobby',
+	value:'basketball, football, gardening'
+},{
+	key:'pet',
+	value:'dog'
+},{
+	key:'pet name',
+	value:'Hugo'
+},{
+	key:'Favourite national sports team',
+	value:'Nicks'
+},{
+	key:'favorite musician/band',
+	value:'U 2, procralimers, creed, def leppard, metallica'
+},{
+	key:'favorite music genre',
+	value:'electronic'
+},{
+	key:'Wife/spouse name',
+	value:'lily'
+},{
+	key:'a country/city you have travelled to',
+	value:'canada, mexico, united kingdom, india'
+},{
+	key: 'favourite movies',
+	value: 'james bond, seven, godfather, shawshank redemption'
+},{
+	key: 'favorite food/dish',
+	value:'orange chicken, chicken qusedillas, takoyaki'
+},{
+	key: 'Company/business you worked for previously',
+	value:'IBM, Apple, Ford'
+},{
+	key: 'Your title at your previous job',
+	value:'Chief Executive Sales at IBM'
+},{
+	key: '<<wife>> Loading an image of your spouse',
+	value:'##https://s3.amazonaws.com/images-hacktech/with+wife.jpg##'
+},{
+	key: '<<makes phone call to emergency contact>>',
+	value:'<<3528881397>>',
+},{
+	key:'<<DaughterContact>>',
+	value:'<<3528701229>>'
+},{
+	key: 'A tv show that they like',
+	value:'cheers, perfect strangers,knight rider, who\'s the boss'
+},{
+	key:'Child name',
+	value:'lucy',
+},{
+	key:'Aniversary date',
+	value:'March, 25',
+},{
+	key:'number of children',
+	value:'1',
+},{
+	key:'Daughter home city',
+	value:'Gainesville',
+},{
+	key:'Daughter age',
+	value:'31'
+},{
+	key:'<<daughter>>',
+	value:'##https://s3.amazonaws.com/images-caltech-hacks/2746457240_4a97bbe57b_z.jpg##'
+},{
+	key:'<<family>>',
+	value:'##https://s3.amazonaws.com/images-caltech-hacks/2746896162_f15ba8c0f5_z.jpg##'
+},{
+	key:'<<grandChildren>>',
+	value:'##https://s3.amazonaws.com/images-caltech-hacks/2747400516_45170dcfc6_z.jpg##'
+}]
+
+
+var allUsers = users.find();
+for(var u in allUsers){
+	u.answerPairs = userKeyValuePair;
+	users.update({'id':u.id},{'$set':{'answerPairs':userKeyValuePair,'wife':wife,'children':children,'grandChildren':grandChildren}}, 
+		function(err){console.log(err)});
+}
 
 exports.storeData = function(req, res){
 	var inputData = JSON.parse(req.body);
@@ -184,35 +277,34 @@ function getIntermediateResponse(req, res){
 				  	},
 				  	body: JSON.stringify({question: answer})
 				};
-					httpsRequest(options, function callback(error, response, body) {
-					  if (!error && response.statusCode == 200) {
-					    var innerInfo = JSON.parse(body);
-					    console.log(innerInfo);
-					    var innerAnswer = innerInfo.answer;
-					    var 
-					    var splitAnswer = innerAnswer.split("@");
-					    //console.log(splitAnswer.length);
-					    if(splitAnswer.length==1){
-					    	output = answer;
-					    }else{
-					    	output = "";
-					    	for(var x in splitAnswer){
-					    		if(answerKeyValuePair[splitAnswer[x]]==undefined){
-					    			output=output+splitAnswer[x]+" ";
-					    		}else{
-						    			var currentAnswer;
-						    			for(var y in userKeyValuePair){
-						    				if(userKeyValuePair[y].key==answerKeyValuePair[splitAnswer[x]]){
-						    					currentAnswer=userKeyValuePair[y].value;
-						    					break;
-						    				}
-						    			}
-						    			output=output+currentAnswer+" ";
-					    			
-					    		}
-					    	}
+				httpsRequest(options, function callback(error, response, body) {
+				  if (!error && response.statusCode == 200) {
+				    var innerInfo = JSON.parse(body);
+				    console.log(innerInfo);
+				    var innerAnswer = innerInfo.answer;
+				    var splitAnswer = innerAnswer.split("@");
+				    //console.log(splitAnswer.length);
+				    if(splitAnswer.length==1){
+				    	output = answer;
+				    }else{
+				    	output = "";
+				    	for(var x in splitAnswer){
+				    		if(answerKeyValuePair[splitAnswer[x]]==undefined){
+				    			output=output+splitAnswer[x]+" ";
+				    		}else{
+					    			var currentAnswer;
+					    			for(var y in userKeyValuePair){
+					    				if(userKeyValuePair[y].key==answerKeyValuePair[splitAnswer[x]]){
+					    					currentAnswer=userKeyValuePair[y].value;
+					    					break;
+					    				}
+					    			}
+					    			output=output+currentAnswer+" ";
+				    			
+				    		}
+				    	}
 
-					    }
+				    }
 					    
 					    output = utf8.encode(output);
 					}else{
@@ -230,13 +322,28 @@ function getIntermediateResponse(req, res){
 
 exports.sendQuestion = function(req, res){
 	users.findById(req.params.id,function(err,user){
+		var commonAnswer = 'Sorry I do not have an answer for that.I am still learning about you, ask me anything else about yourself.';
 		var output;
 	    //checkAndHandleConjugate(req,res);
 		//var options = createOptions(req,res);
+		var options = {
+	  		url: 'https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/'+knowledgeBaseId+'/generateAnswer',
+		  	method: 'POST',
+		  	headers: {
+		      'Content-Type': 'application/json',
+		      'Ocp-Apim-Subscription-Key':subsriptionKey
+		  	},
+		  	body: JSON.stringify(req.body)
+		};
+		console.log('before 1st qna:'+new Date());
 		httpsRequest(options, function callback(error, response, body) {
 			  if (!error && response.statusCode == 200) {
+			  	console.log('after 1st qna:'+new Date());
 			    var info = JSON.parse(body);
-
+			    if(info.score==0){
+			    	res.status(200).json({answer:commonAnswer});
+			    	return;
+			    }
 			    var answer = info.answer;
 			    var options = {
 			  		url: 'https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/'+knowledgeBaseId+'/generateAnswer',
@@ -247,16 +354,21 @@ exports.sendQuestion = function(req, res){
 				  	},
 				  	body: JSON.stringify({question: answer})
 				};
+				console.log('before second qna:'+new Date());
 				httpsRequest(options, function callback(error, response, body) {
 					  if (!error && response.statusCode == 200) {
+					  	console.log('after second qna:'+new Date());
 					    var innerInfo = JSON.parse(body);
-					    console.log(innerInfo);
+					    //console.log(innerInfo);
+					    if(innerInfo.score==0){
+					    	res.status(200).json({answer:commonAnswer});
+					    	return;
+					    }
 					    var innerAnswer = innerInfo.answer;
-					    var 
 					    var splitAnswer = innerAnswer.split("@");
 					    //console.log(splitAnswer.length);
 					    if(splitAnswer.length==1){
-					    	output = answer;
+					    	output = innerAnswer;
 					    }else{
 					    	output = "";
 					    	for(var x in splitAnswer){
@@ -278,7 +390,7 @@ exports.sendQuestion = function(req, res){
 					    }
 					    
 					    //output = utf8.encode(output);
-					    console.log(JSON.stringify(output));
+					    //console.log(JSON.stringify(output));
 			    		res.status(200).json({answer:output});
 					}else{
 						res.send(error);
@@ -293,4 +405,22 @@ exports.sendQuestion = function(req, res){
 	});
 }
 
+exports.getStory = function(req, res){
+	res.status(200).json(userKeyValuePair);
+}
+
+exports.storeInfo = function(req, res){
+	console.log(req.body);
+	information = req.body;
+
+	res.send(200);
+}
+
+exports.getInfo = function(req, res){
+	if(information==undefined){
+		res.status(204).send();
+	}else{
+		res.status(200).json({info: information});
+	}
+}
 
