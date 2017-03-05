@@ -1,11 +1,11 @@
 Hi/Hey/Greetings/Good/Noon/After/Night/Morning	$56	a
 Tell me about yourself	$57	a
-Who am I	$1$	a
-What is my name?	$1$	a
-I dont know my name.	$1$	a
-What do people call me?	$1$	a
-Please tell me my name.	$1$	a
-what's my name	$1$	a
+Who am I	$1$	d
+What is my name?	$1$	d
+I dont know my name.	$1$	d
+What do people call me?	$1$	d
+Please tell me my name.	$1$	d
+what's my name	$1$	d
 How old am I?	$2$	a
 What is my age?	$2$	a
 Whats my age?	$2$	a
@@ -186,10 +186,13 @@ Where was I born?	$55$	a
 Hello	$56$	a
 Hi	$56$	a
 Sup	$56$	a
-Help	$56$	a
-please help me	$56$	a
-$1$	Your name is @1@. You have a condition of Alzheimer beacuse of which you tend to forget some-things about yourself. But you dont have to worry, I am here to help you.	answer
-$2$	@1@, You are @2@ years old.	answer
+Help	$58$	d
+please help me	$58$	d
+I'm scared	$58$	d
+I'm lost 	$58$	d
+I don't know what to do	$58$	d	
+$1$	Your name is @1@. You have a condition of Alzheimer beacuse of which you tend to forget some-things about yourself. But you dont have to worry, I am here to help you. Ask me anything	answer
+$2$	@1@, You are @2@ years old.	distressed
 $3$	@1@, You are originally from United States. You are an American citizen. Currently you live in the Gainesville, Florida, the Sunshine State!	answer
 $4$	You live in the beautiful city of Gainesville. @3@ to be precise.	answer
 $5$	You currently live in the Gainesville, and your home is located at @3@.	answer
@@ -236,6 +239,7 @@ $54$	You have two granddaughters called Katy and Jane, they are 4 and 7 years ol
 $56$	Hello @1@, ask me any question, I'm here to help.	answer
 how many children do I have?	$57$	a
 $57$	You have @32@ children
+$58$	Don't worry. You have a condition called Alzheimer's. This disease can cause you to forget where you are or what you were doing, but I'm here to help you. I'm placing a call to your emergency contact @27@.	distressed
 
 
 
