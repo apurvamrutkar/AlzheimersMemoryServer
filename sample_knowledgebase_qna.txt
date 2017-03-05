@@ -194,6 +194,13 @@ I dont know what to do	$58$	d
 show me my picture/photo/image/pics children/daughter	$59$	a
 show me my picture/photo/image/pics family/wedding	$60$	a
 show me my picture/photo/image/pics grandchildren/grand	$61$	a
+what is Alzheimer's?	$62$	a
+Tell me more about the disease that I have?	$62$	a
+I am depressed	$63$	a
+I am sad	$63$	a
+I'm depressed	$63$	a
+I'm sad	$64$	a
+I feel blue	$63$	a
 $1$	"Your name is @1@. You have a condition of Alzheimer beacuse of which you tend to forget some-things about yourself. But you dont have to worry, I am here to help you. Ask me anything"	answer
 $2$	"@1@, You are @2@ years old."	distressed
 $3$	"@1@, You are originally from United States. You are an American citizen. Currently you live in the Gainesville, Florida, the Sunshine State!"	answer
@@ -241,7 +248,7 @@ $47$	Calling your daughter @27@	answer
 $48$	Kate and Jane your lovely grandchildren are still in school. Your daughter is a interior-designer.	answer
 $55$	"You were born in gainesville, Florida"	answer
 $51$	"@30@ is your daughter and she is @34@ years old and is married to Mr. Mathew Macdonald. She was born on January 31, 1997. She currently lives in @33@"	answer
-$54$	"You have two granddaughters called Katy and Jane, they are 4 and 7 years old respectively. Theyre currently in Kindergartern and Primary school, respectively."	answer
+$54$	"You have two granddaughters called Katy and Jane, they are 4 and 7 years old, they're currently in Kindergartern and Primary school, respectively."	answer
 $56$	"Hello @1@, ask me any question, Im here to help."	answer
 $57$	how many children do I have?	answer
 $57$	You have @32@ children	answer
@@ -250,3 +257,5 @@ $59$	@35@	answer
 $60$	@36@	answer
 $61$	@37@	answer
 $50$	Thank you @1@	answer
+$62$	You have a disease called Alzheimer's. It is a chronic mental degenerative disease that is the most common form of dementia. Common symptoms include short term memory loss and disorientation. As the disease advances, symptoms can include problems with language, disorientation (including easily getting lost), mood swings, loss of motivation, not managing self care, and behavioural issues. For more information, visit  <a href="http://www.alz.org/alzheimers_disease_what_is_alzheimers.asp">this ink</a>
+$63$	Don't worry, it is common to feel this way when you have Alzheimer's. I am here to help you out with anything. I'm placing a call to your emergency contact just in case. @27@	answer
