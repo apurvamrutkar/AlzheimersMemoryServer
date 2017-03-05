@@ -11,8 +11,8 @@
 @11@	a country/city you have travelled to
 @12@	a list of films you love
 @13@	favorite food/dish
-@14@	Company/business you worked for
-@15@ 	Your title at your job
+@14@	Company/business you worked for previously
+@15@ 	Your title at your previous job
 @16@	<wife>Loading an image of your spouse
 @17@	
 @18@	A tv show that they like
@@ -22,3 +22,5 @@
 @30@	Child's name
 @31@	Aniversary date
 @32@	number of children
+@33@	Daughter's home city
+@34@	Daughter's age
