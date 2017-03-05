@@ -1,11 +1,11 @@
-Hi/Hey/Greetings/Good/Noon/After/Night/Morning	$56	a
-Tell me about yourself	$57	a
+Hi/Hey/Greetings/Good/Noon/After/Night/Morning	$56$	a
+Tell me about yourself	$57$	a
 Who am I	$1$	d
 What is my name?	$1$	d
 I dont know my name.	$1$	d
 What do people call me?	$1$	d
 Please tell me my name.	$1$	d
-what's my name	$1$	d
+whats my name	$1$	d
 How old am I?	$2$	a
 What is my age?	$2$	a
 Whats my age?	$2$	a
@@ -114,9 +114,8 @@ am I wealthy/rich?	$24$	a
 am I poor?	$25$	a
 Do I work?	$26$	a
 Do I have a job?	$26$	a
-do I have an occupation	$26	a
-
-If so, as what?	$26$	a
+do I have an occupation	$26$	a
+"If so, as what?"	$26$	a
 When is my anniversary?	$27$	a
 When was I married?	$27$	a
 On what date was married?	$27$	a
@@ -124,7 +123,8 @@ On what date did I marry my wife?	$27$	a
 When did I get married?	$27$	a
 What is my wifes name?	$28$	a
 Can you tell me my wifes name?	$28$	a
-What is my wife's name?	$28$	a
+Tell me about my wife?	$18$	a
+What is my wifes name?	$28$	a
 Name my wife	$28$	a
 Do I have kids?	$29$	a
 Do I have children?	$29$	a
@@ -143,7 +143,7 @@ What is my profession?	$32$	a
 What is my business?	$32$	a
 What do I do for a living?	$32$	a
 What do I do ?	$32$	a
-Where have you worked in the past?	$x33$	a
+Where have you worked in the past?	$33$	a
 Where do I commute to work?	$34$	a
 How do I go to work?	$34$	a
 How do I goto work?	$34$	a
@@ -163,7 +163,7 @@ Have I been to college?	$35$	a
 Who are you?	$36$	a
 Why do you help?	$36$	a
 How can you help me?	$36$	a
-Show me a picture of my spouse?	$37$	a
+Show me a picture/photo/image/pics of my spouse?	$37$	a
 what do I do in my spare time?	$39$	a
 Do you understand me?	$40$	a
 Are you crazy?	$41$	a
@@ -179,8 +179,8 @@ Call my daughter?	$47$	a
 What do my kids/children/daughter/son do?	$48$	a
 You are awesome/fantastic/fantabulous?	$50$	a
 Tell me about my daughter?	$51$	a
-Tell me about my grandchildren?	$53$	a
-What class are my kid's Kids/grandKids?	$54$	a
+Tell me about my grandchildren?	$54$	a
+What class are my kids Kids/grandKids?	$54$	a
 How old are my GrandKids/Grand Kids?	$54$	a
 Where was I born?	$55$	a
 Hello	$56$	a
@@ -188,60 +188,65 @@ Hi	$56$	a
 Sup	$56$	a
 Help	$58$	d
 please help me	$58$	d
-I'm scared	$58$	d
-I'm lost 	$58$	d
-I don't know what to do	$58$	d	
-$1$	Your name is @1@. You have a condition of Alzheimer beacuse of which you tend to forget some-things about yourself. But you dont have to worry, I am here to help you. Ask me anything	answer
-$2$	@1@, You are @2@ years old.	distressed
-$3$	@1@, You are originally from United States. You are an American citizen. Currently you live in the Gainesville, Florida, the Sunshine State!	answer
+Im scared	$58$	d
+Im lost 	$58$	d
+I dont know what to do	$58$	d
+show me my picture/photo/image/pics children/daughter	$59$	a
+show me my picture/photo/image/pics family/wedding	$60$	a
+show me my picture/photo/image/pics grandchildren/grand	$61$	a
+$1$	"Your name is @1@. You have a condition of Alzheimer beacuse of which you tend to forget some-things about yourself. But you dont have to worry, I am here to help you. Ask me anything"	answer
+$2$	"@1@, You are @2@ years old."	distressed
+$3$	"@1@, You are originally from United States. You are an American citizen. Currently you live in the Gainesville, Florida, the Sunshine State!"	answer
 $4$	You live in the beautiful city of Gainesville. @3@ to be precise.	answer
-$5$	You currently live in the Gainesville, and your home is located at @3@.	answer
-$6$	@1@, You believe in God. You regularly visit the church as it brings peace and helps you build community.	answer
-$7$	@1@, you are a vivacious and dynamic person with with a healthy lifestyle. You are very likable and are loved by those around you. You love to @4@ in you spare time.	answer
+$5$	"You currently live in the Gainesville, and your home is located at @3@."	answer
+$6$	"@1@, You believe in God. You regularly visit the church as it brings peace and helps you build community."	answer
+$7$	"@1@, you are a vivacious and dynamic person with with a healthy lifestyle. You are very likable and are loved by those around you. You love to @4@ in you spare time."	answer
 $8$	You have a @5@	answer
 $9$	Your @5@s name is @6@. He is named after the movie @6@.	answer
 $10$	You love to play basketball. You were also a part of gators basketball.	answer
 $11$	Your like baskoetball. You are also a fan on football.	answer
-$12$	@1@, your favourite national team is @7@	answer
-$13$	@1@, you are a Jolly person but sometimes you get a little annoyed. Dont worry, everyone around you loves you and understands you.	answer
+$12$	"@1@, your favourite national team is @7@"	answer
+$13$	"@1@, you are a Jolly person but sometimes you get a little annoyed. Dont worry, everyone around you loves you and understands you."	answer
 $14$	You are happily married with a wife and have one daughter .	answer
 $15$	Your family fully supports you through your illness and they want to to know that they are always there for you.	answer
 $16$	You love to listen music from @8@.	answer
-$17$	You like al kinds of music, but you find @9@ music especially enjoyable.	answer
-$18$	Your wife, @10@, is a home maker, and you have been happily married to her for the last 30 years.	answer
+$17$	"You like al kinds of music, but you find @9@ music especially enjoyable."	answer
+$18$	"Your wife, @10@, is a home maker, and you have been happily married to her for the last 30 years."	answer
 $19$	You are quite a traveller. You have been to @11@.	answer
-$20$	You don't ike to watch movies generally, but you really love @12@ movies.	answer
+$20$	"You dont ike to watch movies generally, but you really love @12@ movies."	answer
 $21$	You really love the taste of @13@.	answer
-$24$	Yes, you are. You have been blessed with a loving family and great friends!	answer
+$24$	"Yes, you are. You have been blessed with a loving family and great friends!"	answer
 $25$	Only if you think so.	answer
-$26$	Yes @1@, you work on your farm each day. You used to work for @14@ as a @15@	answer
+$26$	"Yes @1@, you work on your farm each day. You used to work for @14@ as a @15@"	answer
 $27$	You anniversary is on @31@ and you were married in 1982.	answer
-$30$	Your daughter's name is @30@	answer
+$28$	Your wifes name is @10@ 	answer
+$29$	Yes.You have a daughter.	answer
+$30$	Your daughters name is @30@	answer
 $31$	You worked at The University of Florida as a software developer in the 90s.	answer
 $32$	You worked as a software developer at the university of Florida.	answer
 $33$	You worked at the University of Florida in Gainesville more than 2 decades ago.	answer
-$34$	You own a blue 2010 Mustang, and you drive it to your farm everyday. Your number plate is A123456	answer
+$34$	"You own a blue 2010 Mustang, and you drive it to your farm everyday. Your number plate is A123456"	answer
 $35$	You graduated from the University of Florida in 1983 as a Computer Science Major with a minor in Statistics.	answer
-$36$	I am a personal assistant for your medical needs, I'm designed to help you in any way I can. Use me whenever you want to learn anything about yourself.	answer
+$36$	"I am a personal assistant for your medical needs, Im designed to help you in any way I can. Use me whenever you want to learn anything about yourself."	answer
 $37$	@16@.	answer
-$39$	You normally spend time in your home, watching basketball. You used to take long walks around your farm, but it's harder to do that because of your knees. Much of your time is spent with your family and close friends.	answer
-$40$	Yes I understand you, ask me anything about yourself.	answer
-$41$	No, I am not. The engineers who programmed me are quite smart, especially the one's who created this interface.  Ask me anything about yourself.	answer
+$39$	"You normally spend time in your home, watching basketball. You used to take long walks around your farm, but its harder to do that because of your knees. Much of your time is spent with your family and close friends."	answer
+$40$	"Yes I understand you, ask me anything about yourself."	answer
+$41$	"No, I am not. The engineers who programmed me are quite smart, especially the ones who created this interface.  Ask me anything about yourself."	answer
 $42$	Could not understand you. Ask me anything about yourself.	answer
 $43$	Yes I know you. $1	answer
-$44$	Alzheimers is the most common form of dementia, a general term for memory loss and other intellectual abilities serious enough to interfere with daily life. I know it might be overwhelming to find yourself lost and unabe to remember anything, but I'm here to help you out.	answer
+$44$	"Alzheimers is the most common form of dementia, a general term for memory loss and other intellectual abilities serious enough to interfere with daily life. I know it might be overwhelming to find yourself lost and unabe to remember anything, but Im here to help you out."	answer
 $45$	I am calling your daughter. @17@	answer
 $46$	You like to watch @18@	answer
 $47$	Calling your daughter @27@	answer
-$55$	You were born in gainesville, Florida	answer
-$51$	@30@ is your daughter and she is @34@ years old and is married to Mr. Mathew Macdonald. She was born on January 31, 1997. She currently lives in @33@	answer
-$54$	You have two granddaughters called Katy and Jane, they are 4 and 7 years old respectively. They're currently in Kindergartern and Primary school, respectively.	answer
-$56$	Hello @1@, ask me any question, I'm here to help.	answer
-how many children do I have?	$57$	a
-$57$	You have @32@ children
-$58$	Don't worry. You have a condition called Alzheimer's. This disease can cause you to forget where you are or what you were doing, but I'm here to help you. I'm placing a call to your emergency contact @27@.	distressed
-
-
-
-
-
+$48$	Kate and Jane your lovely grandchildren are still in school. Your daughter is a interior-designer.	answer
+$55$	"You were born in gainesville, Florida"	answer
+$51$	"@30@ is your daughter and she is @34@ years old and is married to Mr. Mathew Macdonald. She was born on January 31, 1997. She currently lives in @33@"	answer
+$54$	"You have two granddaughters called Katy and Jane, they are 4 and 7 years old respectively. Theyre currently in Kindergartern and Primary school, respectively."	answer
+$56$	"Hello @1@, ask me any question, Im here to help."	answer
+$57$	how many children do I have?	answer
+$57$	You have @32@ children	answer
+$58$	"Dont worry. You have a condition called Alzheimers. This disease can cause you to forget where you are or what you were doing, but Im here to help you. Im placing a call to your emergency contact @27@."	distressed
+$59$	@35@	answer
+$60$	@36@	answer
+$61$	@37@	answer
+$50$	Thank you @1@	answer
